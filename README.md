@@ -19,6 +19,11 @@
     django-admin startproject agenda_monitoria ./
 ```
 
+## init new app django
+```bash
+    python manage.py startapp nome_app
+```
+
 ## create .env in root of project
 
 ```bash

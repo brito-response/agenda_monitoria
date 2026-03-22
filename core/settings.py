@@ -4,18 +4,13 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config("SECRET_KEY")
 
-DEBUG = config('DEBUG',default=False,cast=bool)
-#SECRET_KEY = "django-insecure-cau(7%sw3x-c*bc@ry#4$r@%(n6i_88$#$tim@gpp1_$4t&@gr"
+DEBUG = config("DEBUG", default=False, cast=bool)
+# SECRET_KEY = "django-insecure-cau(7%sw3x-c*bc@ry#4$r@%(n6i_88$#$tim@gpp1_$4t&@gr"
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -26,6 +21,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "apps.user.apps.UserConfig",
+    "apps.monitor.apps.MonitorConfig",
+    "apps.horario.apps.HorarioConfig",
+    "apps.agendamento.apps.AgendamentoConfig",
 ]
 
 MIDDLEWARE = [
@@ -91,9 +90,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "pt-BR"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "America/Sao_Paulo"
 
 USE_I18N = True
 
