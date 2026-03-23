@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     "apps.monitor.apps.MonitorConfig",
     "apps.horario.apps.HorarioConfig",
     "apps.agendamento.apps.AgendamentoConfig",
+    "apps.home.apps.HomeConfig",
 ]
 
 MIDDLEWARE = [
@@ -42,7 +43,7 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ["templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -103,3 +104,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+STATICFILES_DIRS = ['templates/css','templates/img']
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = "media"
