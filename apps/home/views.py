@@ -1,7 +1,5 @@
 from django.shortcuts import render
+from datetime import datetime
 
-# from django.http import HttpResponse
-
-
-def home(request, pessoa: str, idade: int):
-    return render(request, "index.html", {"v_nome": pessoa, "v_idade": idade})  # passamos parametros como dicionario
+def home(request):
+    return render(request, "index.html", {"data": datetime.now()}) 

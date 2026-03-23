@@ -8,7 +8,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config("DEBUG", default=False, cast=bool)
-# SECRET_KEY = "django-insecure-cau(7%sw3x-c*bc@ry#4$r@%(n6i_88$#$tim@gpp1_$4t&@gr"
 
 ALLOWED_HOSTS = []
 
@@ -22,7 +21,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "apps.user.apps.UserConfig",
-    "apps.monitor.apps.MonitorConfig",
+    "apps.disciplina.apps.DisciplinaConfig",
     "apps.horario.apps.HorarioConfig",
     "apps.agendamento.apps.AgendamentoConfig",
     "apps.home.apps.HomeConfig",
@@ -87,6 +86,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "user.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/

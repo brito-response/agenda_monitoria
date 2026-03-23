@@ -1,4 +1,18 @@
-## uv install dependences
+## requirements
+- python 3+
+- dependency manager -> uv
+- install
+```bash
+    irm https://astral.sh/uv/install.ps1 | iex
+```
+- Close and reopen the terminal and run:
+```bash
+    uv --version
+```
+
+
+## To run project:
+- uv install dependences
 ```bash
     uv sync;
 ```
@@ -8,23 +22,8 @@
     .\.venv\Scripts\activate
 ```
 
-## run pylint
-```bash
-    uv run pylint --ignore=.venv,migrations,__pycache__,*.ini,*.toml ./ ;
-    uv run black ./ --exclude ".venv|migrations|__pycache__|pyproject.toml|uv.lock|.pylintrc|.gitignore"
-```
-
-## init project django
-```bash
-    django-admin startproject agenda_monitoria ./
-```
-
-## init new app django
-```bash
-    python manage.py startapp nome_app
-```
-
-## create .env in root of project
+## create _.env_ in root of project
+- gerator of secrets django [link](https://djecrety.ir/)
 
 ```bash
 SECRET_KEY=djangosecrets_of_project
@@ -36,3 +35,35 @@ USER=username
 PASSWORD=password
 
 ```
+
+## Build the migrations and apply the migrations to the database.
+
+```bash
+    python manage.py makemigrations; python manage.py migrate; 
+
+```
+
+## create super user
+
+```bash
+    python manage.py createsuperuser; 
+
+```
+
+## run project
+
+```bash
+    python manage.py runserver
+```
+
+and good searching ...
+
+
+# Utilities
+
+## run pylint
+```bash
+    uv run pylint --ignore=.venv,migrations,__pycache__,*.ini,*.toml ./ ;
+    uv run black ./ --exclude ".venv|migrations|__pycache__|pyproject.toml|uv.lock|.pylintrc|.gitignore"
+```
+

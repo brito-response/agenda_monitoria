@@ -1,14 +1,22 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'home.css' %}">
-</head>
-<body class="home">
-    <h2>Ola mundo django</h2>
-    <p>meu nome é {{v_nome}} e tenho {{v_idade}} anos</p>
-</body>
-</html>
+
+{% block content %}
+<section class="hero">
+    <div class="hero-text">
+        <h1>Aprenda melhor com monitoria</h1>
+        <p>Agende horários com monitores da sua disciplina e evolua nos estudos de forma prática e rápida. </p>
+
+        <a href="/horarios/" class="btn btn-primary">Agendar agora</a>
+
+        <span class="data">
+            Hoje: {{ data|date:"d/m/Y H:i" }}
+        </span>
+    </div>
+
+    <div class="hero-image">
+        <img src="{% static 'horario.svg' %}" alt="Aluno escolhendo horario">
+    </div>
+
+</section>
+{% endblock %}
