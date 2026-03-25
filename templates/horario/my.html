@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-xl font-bold mb-4">Meus Agendamentos</h1>
+
+<ul class="space-y-3">
+{% for a in agendamentos %}
+    <li class="bg-white p-3 shadow rounded flex justify-between">
+        {{ a.horario.disciplina }} - {{ a.horario.dia }}
+
+        <a href="/agendamentos/cancelar/{{ a.id }}/" class="text-red-500">
+            Cancelar
+        </a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

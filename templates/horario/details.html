@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-xl font-bold mb-4">Detalhes do Horário</h1>
+
+<p><strong>{{ horario.disciplina }}</strong></p>
+<p>{{ horario.dia }} - {{ horario.hora }}</p>
+
+<h2 class="mt-4 font-semibold">Agendamentos</h2>
+
+<ul>
+    {% for a in agendamentos %}
+        <li>{{ a.aluno.email }}</li>
+    {% empty %}
+        <li>Ninguém agendou ainda</li>
+    {% endfor %}
+</ul>
+{% endblock %}

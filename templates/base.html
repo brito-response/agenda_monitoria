@@ -24,10 +24,8 @@
     {% include "footer.html" %}
     {% endblock %}
 
-
     <div id="loginModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50">
         <div class="bg-white w-full max-w-md rounded-2xl shadow-xl p-6 relative">
-            <!-- Close -->
             <button id="closeModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
                 ✕
             </button>
@@ -38,11 +36,13 @@
                 {% csrf_token %}
                 <div>
                     <label class="block text-sm text-gray-600 mb-1">Email</label>
-                    <input type="email" name="username" required class="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                    <input type="email" name="username" required placeholder="seu@email.com"
+                        class="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-gray-800 placeholder-gray-400 transition duration-200 shadow-sm">
                 </div>
                 <div>
                     <label class="block text-sm text-gray-600 mb-1">Senha</label>
-                    <input type="password" name="password" required class="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                    <input type="password" name="password" required placeholder="********"
+                        class="w-full px-4 py-2.5 rounded-xl border border-gray-300  text-gray-800 placeholder-gray-400 transition duration-200 shadow-sm">
                 </div>
 
                 <button type="submit"
@@ -53,21 +53,30 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+
             const menuBtn = document.getElementById('menuBtn');
             const mobileMenu = document.getElementById('mobileMenu');
 
-            const loginBtn = document.getElementById('loginBtn');
+            menuBtn?.addEventListener('click', () => {mobileMenu.classList.toggle('hidden');});
+
+
             const loginModal = document.getElementById('loginModal');
             const closeModal = document.getElementById('closeModal');
 
-            // menu mobile
-            menuBtn?.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            // pega TODOS os botões de abrir login
+            const loginBtns = document.querySelectorAll('.open-login');
 
-            // abrir modal
-            loginBtn?.addEventListener('click', () => { loginModal.classList.remove('hidden'); });
+            loginBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    loginModal.classList.remove('hidden');
+                    mobileMenu.classList.add('hidden');
+                });
+            });
 
             // fechar modal
-            closeModal?.addEventListener('click', () => { loginModal.classList.add('hidden'); });
+            closeModal?.addEventListener('click', () => {
+                loginModal.classList.add('hidden');
+            });
 
             // fechar clicando fora
             loginModal?.addEventListener('click', (e) => {
@@ -78,7 +87,6 @@
 
         });
     </script>
-
 </body>
 
 </html>

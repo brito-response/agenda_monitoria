@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-xl font-bold mb-4">Horários</h1>
+
+<a href="/horarios/create/" class="bg-green-600 text-white px-4 py-2 rounded">
+    Criar horário
+</a>
+
+<div class="mt-4 space-y-3">
+    {% for h in horarios %}
+    {% if h.dia == "segunda" or h.dia == "terça" or h.dia == "quarta" or h.dia == "quinta" or h.dia == "sexta" %}
+    <div class="p-4 bg-white shadow rounded">
+        <p><strong>{{ h.disciplina }}</strong></p>
+        <p>{{ h.dia }} - {{ h.hora }}</p>
+        <p>Monitor: {{ h.monitor.email }}</p>
+
+        <div class="mt-2 flex gap-2">
+            <a href="/horarios/{{ h.id }}/" class="text-blue-500">Detalhes</a>
+
+            <a href="/agendamentos/agendar/{{ h.id }}/" class="text-green-600">
+                Agendar
+            </a>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

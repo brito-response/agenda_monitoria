@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-xl mx-auto mt-10 bg-white p-6 rounded-2xl shadow">
+    <h1 class="text-2xl font-bold mb-6 text-gray-800">
+        Criar Horário
+    </h1>
+
+    <form method="POST" class="space-y-4">
+        {% csrf_token %}
+
+        <!-- Data -->
+        <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1">
+                Data
+            </label>
+            {{ form.data }}
+        </div>
+
+        <!-- Hora Início -->
+        <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1">
+                Hora Início
+            </label>
+            {{ form.hora_inicio }}
+        </div>
+
+        <!-- Hora Fim -->
+        <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1">
+                Hora Fim
+            </label>
+            {{ form.hora_fim }}
+        </div>
+
+        <!-- Vagas Totais -->
+        <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1">
+                Vagas Totais
+            </label>
+            {{ form.vagas_totais }}
+        </div>
+
+        <!-- Disciplina -->
+        <div>
+            <label class="block text-sm font-medium text-gray-600 mb-1">
+                Disciplina
+            </label>
+            {{ form.disciplina }}
+        </div>
+
+        <!-- Botão -->
+        <button type="submit"
+            class="w-full bg-green-600 text-white py-2.5 rounded-lg font-semibold hover:bg-green-700 transition">
+            Criar Horário
+        </button>
+    </form>
+
+</div>
+{% endblock %}
