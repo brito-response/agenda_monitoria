@@ -1,17 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="card">
-    <h2>Confirmar exclusão</h2>
+<section class="max-w-md mx-auto py-20 px-6">
 
-    <p>Deseja deletar <strong>{{ user.username }}</strong>?</p>
+    <div class="bg-white shadow-xl rounded-2xl p-8 text-center">
 
-    <form method="POST">
-        {% csrf_token %}
-        <button class="btn btn-danger">Sim, deletar</button>
-    </form>
+        <!-- Ícone -->
+        <div class="flex justify-center mb-4">
+            <div class="bg-red-100 text-red-600 p-3 rounded-full text-2xl">
+                ⚠️
+            </div>
+        </div>
 
-    <br>
-    <a class="btn btn-secondary" href="{% url 'user_list' %}">Cancelar</a>
-</div>
+        <!-- Título -->
+        <h2 class="text-xl font-bold text-gray-900 mb-2">
+            Confirmar exclusão
+        </h2>
+
+        <!-- Texto -->
+        <p class="text-gray-600 mb-6">
+            Tem certeza que deseja deletar
+            <strong class="text-gray-900">{{ user.username }}</strong>?
+        </p>
+
+        <!-- Ações -->
+        <div class="flex justify-center gap-3">
+
+            <a href="{% url 'user_list' %}"
+               class="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 transition">
+                Cancelar
+            </a>
+
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit"
+                        class="px-4 py-2 rounded-lg bg-red-600 text-white font-semibold hover:bg-red-700 transition">
+                    Sim, deletar
+                </button>
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
 {% endblock %}

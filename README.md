@@ -53,7 +53,9 @@ PASSWORD=password
 ## run project
 
 ```bash
-    python manage.py runserver
+    python manage.py runserver # open another terminal and run
+    python manage.py tailwindstart # to run tailwind in development
+
 ```
 
 and good searching ...

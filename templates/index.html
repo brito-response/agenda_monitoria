@@ -2,20 +2,36 @@
 {% load static %}
 
 {% block content %}
-<section class="hero">
-    <div class="hero-text">
-        <h1>Aprenda melhor com monitoria</h1>
-        <p>Agende horários com monitores da sua disciplina e evolua nos estudos de forma prática e rápida. </p>
+<section class="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
 
-        <a href="/horarios/" class="btn btn-primary">Agendar agora</a>
+    <!-- Texto -->
+    <div class="flex-1">
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight text-gray-900 mb-6">
+            Aprenda melhor com <span class="text-blue-600">monitoria</span>
+        </h1>
 
-        <span class="data">
-            Hoje: {{ data|date:"d/m/Y H:i" }}
-        </span>
+        <p class="text-lg text-gray-600 mb-8">
+            Agende horários com monitores da sua disciplina e evolua nos estudos
+            de forma prática, rápida e organizada.
+        </p>
+
+        <div class="flex items-center gap-4">
+            <a href="/horarios/"
+               class="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold shadow hover:bg-blue-700 transition">
+                Agendar agora
+            </a>
+
+            <span class="text-sm text-gray-500">
+                Hoje: {{ data|date:"d/m/Y H:i" }}
+            </span>
+        </div>
     </div>
 
-    <div class="hero-image">
-        <img src="{% static 'horario.svg' %}" alt="Aluno escolhendo horario">
+    <!-- Imagem -->
+    <div class="flex-1 flex justify-center">
+        <img src="{% static 'horario.svg' %}"
+             alt="Aluno escolhendo horario"
+             class="w-full max-w-md drop-shadow-xl">
     </div>
 
 </section>

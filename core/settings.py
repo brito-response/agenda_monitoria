@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     "apps.horario.apps.HorarioConfig",
     "apps.agendamento.apps.AgendamentoConfig",
     "apps.home.apps.HomeConfig",
+    "tailwind",
+    "theme",
 ]
 
 MIDDLEWARE = [
@@ -86,6 +88,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+
+TAILWIND_APP_NAME="theme"
+
 AUTH_USER_MODEL = "user.User"
 
 # Internationalization
@@ -105,7 +111,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATICFILES_DIRS = ['templates/css','templates/img']
+STATICFILES_DIRS = ['templates/img']
 
 MEDIA_URL = "/media/"
 
