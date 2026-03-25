@@ -1,0 +1,61 @@
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2">
+            <span class="text-2xl">📘</span>
+            <span class="text-lg font-semibold text-gray-800">Monitoria</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+
+            <a href="/users/" class="text-gray-600 hover:text-blue-600 transition">
+                Usuários
+            </a>
+
+            <a href="/horarios/" class="text-gray-600 hover:text-blue-600 transition">
+                Horários
+            </a>
+
+            <!-- Auth -->
+            <button id="loginBtn"
+                class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                Entrar
+            </button>
+
+        </nav>
+
+        <!-- Mobile Button -->
+        <button id="menuBtn" class="md:hidden text-gray-700"> ☰ </button>
+
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu"
+         class="hidden md:hidden px-6 pb-4 space-y-3">
+
+        <a href="/users/" class="block text-gray-600 hover:text-blue-600">
+            Usuários
+        </a>
+
+        <a href="/horarios/" class="block text-gray-600 hover:text-blue-600">
+            Horários
+        </a>
+
+        <button class="w-full text-left bg-blue-600 text-white px-4 py-2 rounded-lg">
+            Entrar
+        </button>
+
+    </div>
+</header>
+
+<!-- Script simples -->
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn?.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>

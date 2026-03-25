@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views
 from apps.user import urls as user_urls
 from apps.horario import urls as horario_urls
 from apps.agendamento import urls as agendamento_urls
@@ -11,6 +12,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("", include(home_urls)),
+    
+    path("login/", auth_views.LoginView.as_view(), name="login"),
+    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
+    
     path("users/", include(user_urls)),
     path("disciplinas/", include(disciplina_urls)),
     path("horarios/", include(horario_urls)),

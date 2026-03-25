@@ -90,9 +90,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
-TAILWIND_APP_NAME="theme"
+TAILWIND_APP_NAME = "theme"
 
 AUTH_USER_MODEL = "user.User"
+
+LOGIN_REDIRECT_URL = "/admin"
+
+LOGOUT_REDIRECT_URL = "/"
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
@@ -111,7 +115,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATICFILES_DIRS = ['templates/img']
+STATICFILES_DIRS = ["templates/img"]
 
 MEDIA_URL = "/media/"
 
